@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoUserSettingsManager" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Server\Server.csproj" />
+      <ProjectReference Include="..\SharedDataTransfer\SharedDataTransfer.csproj" />
+      <ProjectReference Include="..\SharedProtocol\SharedProtocol.csproj" />
+      <ProjectReference Include="..\UserConsole\UserConsole.csproj" />
+      <ProjectReference Include="..\Util\Util.csproj" />
+    </ItemGroup>
+
+</Project>

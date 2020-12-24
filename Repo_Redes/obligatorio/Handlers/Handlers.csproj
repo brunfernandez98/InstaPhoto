@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\Server.RBMSQ\Server.RBMSQ.csproj" />
+      <ProjectReference Include="..\SharedDataTransfer\SharedDataTransfer.csproj" />
+      <ProjectReference Include="..\SharedProtocol\SharedProtocol.csproj" />
+      <ProjectReference Include="..\SystemService\SystemService.csproj" />
+      <ProjectReference Include="..\Util\Util.csproj" />
+    </ItemGroup>
+
+</Project>

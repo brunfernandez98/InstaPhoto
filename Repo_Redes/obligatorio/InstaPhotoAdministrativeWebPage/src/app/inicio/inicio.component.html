@@ -1,0 +1,84 @@
+<mat-accordion>
+
+  <!-- Buscar LOG -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Buscar Logs
+      </mat-panel-title>
+      <mat-panel-description>
+        Buscar Logs
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    Filtrar por:
+    <mat-form-field>
+      <mat-select [(value)]="selected">
+        <mat-option value="INFO">INFO</mat-option>
+        <mat-option value="WARNING">WARNING</mat-option>
+        <mat-option value="ERROR">ERROR</mat-option>
+      </mat-select>
+      <br>
+    </mat-form-field>
+    <mat-slide-toggle (click)="onoffChange()">OFF/ON</mat-slide-toggle>
+    <mat-table [dataSource]="dataSource"
+               class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.author}} </mat-cell>
+      </ng-container>
+
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"  > {{element.date}} </mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.type}} </mat-cell>
+      </ng-container>
+
+      <!-- Password Column -->
+      <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef> TypeSeverity </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.typeSeverity}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-expansion-panel>
+<br>
+  <!-- Administrar USUARIOR -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Administracion
+      </mat-panel-title>
+      <mat-panel-description>
+        Administracion de Usuarios
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Crear Admin</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="add-admin-container">
+          <mat-form-field><input matInput placeholder="Nombre" [(ngModel)]="Nombre" ></mat-form-field>
+          <br>
+          <mat-form-field><input matInput placeholder="Email" [(ngModel)]="Mail" ></mat-form-field>
+          <br>
+          <mat-form-field> <input matInput placeholder="Contraseña" [(ngModel)]="Password" ></mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addUser()">Agregar</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-expansion-panel>
+
+</mat-accordion>
+

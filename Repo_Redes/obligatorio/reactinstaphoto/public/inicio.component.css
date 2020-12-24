@@ -1,0 +1,19 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.add-admin-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.modificador{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
